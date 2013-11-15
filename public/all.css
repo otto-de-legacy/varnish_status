@@ -1,0 +1,17 @@
+body {
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.status-okay {
+  color: green;
+}
+
+.status-warning {
+  color: orange;
+}
+
+.status-critical {
+  color: red;
+}

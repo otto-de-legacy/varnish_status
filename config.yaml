@@ -1,0 +1,5 @@
+:proxy_mnemonic: pa
+:proxy_name: varnish
+:varnishadm: /usr/bin/varnishadm
+:varnishadm_opts: 
+:critical_threshold: 0.5

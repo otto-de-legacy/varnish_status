@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta http-equiv="refresh" content="30; /">
+    <title>Varnish Status</title>
+    <link rel="stylesheet" href="all.css" />
+  </head>
+  <body>
+    <% @vbs.directors.each do |name, director| %>
+        <div class="status-<%= director.status %>">
+          <b><%= name %></b>
+          <%= director.healthy_backends %>/<%= director.backends.size %> backends in HEALTHY state
+        </div>
+
+        <% if director.sick_backends > 0 %>
+          <ul>
+          <% director.backends.select { |be| be.status != "HEALTHY"}.each do |be| %>
+              <li><%= be.name %> (<%= be.ip %>) / <%= be.status %></li>
+          <% end %>
+          </ul>
+        <% end %>
+
+        <br />
+    <% end %>
+  </body>
+</html>
